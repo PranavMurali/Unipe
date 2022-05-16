@@ -1,5 +1,5 @@
 import React ,{useEffect, useState} from 'react'
-import { StyleSheet, Text, View,SafeAreaView,TextInput, KeyboardAvoidingView} from 'react-native';
+import { Image, Text, View,SafeAreaView,TextInput, KeyboardAvoidingView} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import { Icon,Button} from 'react-native-elements';
 import { useNavigation} from '@react-navigation/core';
@@ -40,10 +40,9 @@ const OTPScreen = () => {
 
 
   return (
-    <KeyboardAvoidingView style={tw`flex-1`} behavior="padding" keyboardVerticalOffset={40}>
     <SafeAreaView>
       <View style={tw`bg-white h-full`}>
-          <Text style={tw`text-4xl text-black text-center mt-40 lowercase text-purple-900 font-bold`}>UNIPE</Text>
+          <Image style={tw`ml-20 mt-8 w-64 h-32`} source={require("../Unipe-Thumbnail.png")}/>
           <Text style={tw`ml-10 mt-10 text-purple-900`}>Please wait, we will auto verify the OTP sent to {phn}
           <Icon
             name='edit'
@@ -57,7 +56,6 @@ const OTPScreen = () => {
           {next ? <Button id= "recaptcha" title="Verify" type="solid" buttonStyle={tw`ml-10 mt-5 w-80 h-14 text-xl rounded`} onPress={() => {confirmVerificationCode(otp)}}/> : <Button id= "recaptcha" title="Verify" type="solid" buttonStyle={tw`ml-10 mt-5 w-80 h-14 text-xl rounded`} disabled/>}
       </View>
     </SafeAreaView>
-    </KeyboardAvoidingView>
   )
 }
 

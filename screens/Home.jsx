@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import { StyleSheet, Text, View,SafeAreaView,TextInput} from 'react-native';
+import { Image, Text, View,SafeAreaView,TextInput} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import { useStateValue } from "../StateProvider";
 import { useNavigation} from '@react-navigation/core';
@@ -15,7 +15,7 @@ const Home = () => {
     const Tab = createBottomTabNavigator();
   return (
     <>
-    <View style={tw`bg-white mt-14`}>
+    <View style={tw`bg-white`}>
         <View style={tw`flex-row justify-between items-center p-4`}>
         <Icon
                 name="menu"
@@ -23,9 +23,7 @@ const Home = () => {
                 color="black"
                 size={30}
             />
-            <Text style={tw`text-purple-900 text-2xl font-bold`}>
-               Unipe
-            </Text>
+            <Image style={tw`w-28 h-16`} source={require("../Unipe-Thumbnail.png")}/>
             <Icon
                 name="ellipsis-vertical-outline"
                 type="ionicon"
